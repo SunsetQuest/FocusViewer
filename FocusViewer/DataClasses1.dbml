@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Focus" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=Focus;Integrated Security=True" SettingsObjectName="FocusViewer.Properties.Settings" SettingsPropertyName="FocusConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Briefs" Member="Briefs">
+    <Type Name="Brief">
+      <Column Name="BriefID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BriefBytes" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Symbols" Member="Symbols">
+    <Type Name="Symbol">
+      <Column Name="SymbolID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NChar(32)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Market" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CodeUpdates" Member="CodeUpdates">
+    <Type Name="CodeUpdate">
+      <Column Name="ide" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="brfVersion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalTime" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PROG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Signals" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="code" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="score" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TwkBitFlipCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="unTestedScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="midEntryPointScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DisplayScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DisplayUnTestedScore" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RunCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WinCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FailedReRunCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CutOffCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoChangeDetCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DegradeFloorCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KeepWithSmallDegCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FailedMinTrdCtRuleCt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cutoffs10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrdCtAvg" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd0Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd1Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd2Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd3Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd4Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd5Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd6Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Trd7Ct" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore15" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore17" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore18" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore19" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore21" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore22" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore25" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore26" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore27" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore28" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore29" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore30" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MyScore31" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
