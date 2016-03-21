@@ -15,20 +15,20 @@ namespace FocusViewer
 {
     public partial class frmMain : Form
     {
-        /// <summary>The number of symbols (or tickers) that will be read. (CURRENTLY HARD CODED TO 32) </summary>
-        const int TickerCount = 32;
+        /// <summary>The number of symbols (or tickers) that will be read. (CURRENTLY ONLY 32 HAS BEEN TESTED)</summary>
+        readonly int TickerCount;
 
-        /// <summary>The number of attributes (or tickers) that will be read. (CURRENTLY HARD CODED TO 32)</summary>
-        const int AttributeCount = 32;
+        /// <summary>The number of attributes (or tickers) that will be read. (CURRENTLY ONLY 32 HAS BEEN TESTED)</summary>
+        readonly int AttributeCount;
 
-        /// <summary>Display size for code bits (X dimension).</summary>
-        //const int FocusCodeSets = 32;
+        /// <summary>Display size for code bits (X dimension)(CURRENTLY ONLY 32 HAS BEEN TESTED).</summary>
+        readonly int FocusCodeSets;
 
-        /// <summary>Display size for code bits (Y dimension).</summary>
-        const int FocusCodeLanes = 32;
+        /// <summary>Display size for code bits (Y dimension)(CURRENTLY ONLY 32 HAS BEEN TESTED).</summary>
+        readonly int FocusCodeLanes;
 
-        /// <summary>Display size for code bits (Z dimension).</summary>
-        const int FocusCodeBits = 32;
+        /// <summary>Display size for code bits (Z dimension)(CURRENTLY ONLY 32 HAS BEEN TESTED).</summary>
+        readonly int FocusCodeBits;
 
         /// <summary>The number of Briefs that have been loaded.</summary>
         int briefCt = 0;
@@ -39,7 +39,7 @@ namespace FocusViewer
         /// <summary>Data Context</summary>
         DataClasses1DataContext dc = new DataClasses1DataContext();
 
-        string[] HeaderNames = new string[TickerCount * AttributeCount + 32];
+        string[] HeaderNames;
 
         /// <summary>Contains the last code/program image so we can compare it next time.</summary>
         BitArray[][] lastCode;
@@ -57,6 +57,14 @@ namespace FocusViewer
         public frmMain()
         {
             InitializeComponent();
+            
+            FocusCodeBits = Properties.Settings.Default.FocusCodeBits;
+            FocusCodeLanes = Properties.Settings.Default.FocusCodeLanes;
+            FocusCodeSets = Properties.Settings.Default.FocusCodeSets;
+            AttributeCount = Properties.Settings.Default.AttributeCount;
+            TickerCount = Properties.Settings.Default.TickerCount;
+
+            HeaderNames = new string[TickerCount * AttributeCount + 32];
         }
 
         private void Form1_Load(object sender, EventArgs e)
